@@ -41,6 +41,7 @@ public class Player1Controller extends GameController {
         if (getModel().isEmpty(position)) {
             getModel().getPlayer1().setPos(position);
         }
+        else getModel().restartArena(1,0);
     }
 
     @Override

@@ -14,6 +14,7 @@ public class GameViewer extends Viewer<Arena> {
 
     @Override
     public void drawElements(GUI gui) {
+        drawScoreBar(gui, getModel().getScore1(), getModel().getScore2(), getModel().getWidth(), new ScoreViewer());
         drawElements(gui, getModel().getPaths1(), new Path1Viewer());
         drawElements(gui, getModel().getPaths2(), new Path2Viewer());
         drawElement(gui, getModel().getPlayer1(), new Player1Viewer());
@@ -28,4 +29,10 @@ public class GameViewer extends Viewer<Arena> {
     private <T extends Element> void drawElement(GUI gui, T element, ElementViewer<T> viewer) {
         viewer.draw(element, gui);
     }
+
+    private void drawScoreBar(GUI gui, int s1, int s2, int width,ScoreViewer viewer) {
+        viewer.draw(gui, s1, width,s2);
+    }
+
+
 }
