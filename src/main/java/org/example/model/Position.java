@@ -17,6 +17,11 @@ public class Position {
         return x;
     }
 
+
+    public boolean equals(Position position){
+        return position.getX()==x && position.getY()==y;
+    }
+
     public Position getLeft() {
         return new Position(x - 1, y);
     }
